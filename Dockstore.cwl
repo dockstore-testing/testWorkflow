@@ -13,7 +13,7 @@ outputs:
 
 steps:
   - id: untar
-    run: tar-param.cwl
+    run: cwl/tar-param.cwl
     inputs:
       - id: tarfile
         source: "#inp"
@@ -23,7 +23,7 @@ steps:
       - id: example_out
 
   - id: compile
-    run: arguments.cwl
+    run: cwl/arguments.cwl
     inputs:
       - id: src
         source: "#untar/example_out"
