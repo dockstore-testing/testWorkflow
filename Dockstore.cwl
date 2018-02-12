@@ -23,7 +23,7 @@ steps:
       - id: example_out
 
   - id: compile
-    run: arguments.cwl
+    run: {import: arguments.cwl}
     inputs:
       - id: src
         source: "#untar/example_out"
