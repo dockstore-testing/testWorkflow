@@ -28,7 +28,7 @@ pipeline {
         sh './dockstore checker launch --entry github.com/HumanCellAtlas/skylab/HCA_SmartSeq2:dockstore --json checkparam.json'
       }
     }
-    stage('entry convert base') {
+    stage('entry convert parent') {
       steps {
         parallel(
           "entry convert parent": {
