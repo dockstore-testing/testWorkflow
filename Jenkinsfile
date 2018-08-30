@@ -25,6 +25,26 @@ pipeline {
     stage('launch') {
       steps {
         sh './dockstore workflow launch --entry github.com/HumanCellAtlas/skylab/HCA_SmartSeq2_wdl_checker:dockstore --json Dockstore.json'
+        sh './dockstore checker launch --entry github.com/HumanCellAtlas/skylab/HCA_SmartSeq2:dockstore --json checkparam.json'
+      }
+    }
+    stage('entry convert base') {
+      steps {
+        parallel(
+          "entry convert base": {
+            sh './dockstore workflow convert entry2json --entry github.com/HumanCellAtlas/skylab/HCA_SmartSeq2:dockstore > Dockstore.json'
+            
+          },
+          "wget test parameter file": {
+            sh 'wget --header=\'Accept: text/plain\' https://staging.dockstore.org:443/api/api/ga4gh/v2/tools/%23workflow%2Fgithub.com%2FHumanCellAtlas%2Fskylab%2FHCA_SmartSeq2/versions/dockstore/PLAIN_WDL/descriptor//test/smartseq2_single_sample/pr/dockstore_test_inputs.json -O Dockstore.json'
+            
+          }
+        )
+      }
+    }
+    stage('launch parent') {
+      steps {
+        sh './dockstore workflow launch --entry github.com/HumanCellAtlas/skylab/HCA_SmartSeq2:dockstore --json Dockstore.json'
       }
     }
   }
