@@ -3,9 +3,8 @@ pipeline {
   stages {
     stage('Get dockstore CLI') {
       steps {
-        sh '''wget https://github.com/ga4gh/dockstore/releases/download/1.5.0-beta.4/dockstore
-
-'''
+        deleteDir()
+        sh 'wget https://github.com/ga4gh/dockstore/releases/download/1.5.0-beta.4/dockstore'
         sh 'chmod a+x dockstore'
       }
     }
