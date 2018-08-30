@@ -31,8 +31,8 @@ pipeline {
     stage('entry convert base') {
       steps {
         parallel(
-          "entry convert base": {
-            sh './dockstore workflow convert entry2json --entry github.com/HumanCellAtlas/skylab/HCA_SmartSeq2:dockstore > Dockstore.json'
+          "entry convert parent": {
+            sh './dockstore workflow convert entry2json --entry github.com/HumanCellAtlas/skylab/HCA_SmartSeq2:dockstore > Dockstore_converted'
             
           },
           "wget test parameter file": {
