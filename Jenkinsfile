@@ -47,5 +47,11 @@ pipeline {
         sh './dockstore workflow launch --entry github.com/HumanCellAtlas/skylab/HCA_SmartSeq2:dockstore --json Dockstore.json'
       }
     }
+    stage('Cleanup') {
+      steps {
+        deleteDir()
+        cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, cleanupMatrixParent: true, deleteDirs: true)
+      }
+    }
   }
 }
