@@ -16,7 +16,7 @@ pipeline {
             
           },
           "wget test parameter file": {
-            sh 'wget --header='Accept: text/plain' https://staging.dockstore.org:443/api/api/ga4gh/v2/tools/%23workflow%2Fgithub.com%2FHumanCellAtlas%2Fskylab%2FHCA_SmartSeq2_wdl_checker/versions/dockstore/PLAIN_WDL/descriptor/dockstore_test_inputs.json -O Dockstore.json'
+            sh 'wget --header=\'Accept: text/plain\' https://staging.dockstore.org:443/api/api/ga4gh/v2/tools/%23workflow%2Fgithub.com%2FHumanCellAtlas%2Fskylab%2FHCA_SmartSeq2_wdl_checker/versions/dockstore/PLAIN_WDL/descriptor/dockstore_test_inputs.json -O Dockstore.json'
             
           }
         )
@@ -36,7 +36,7 @@ pipeline {
             
           },
           "wget test parameter file": {
-            sh 'wget --header='Accept: text/plain' https://staging.dockstore.org:443/api/api/ga4gh/v2/tools/%23workflow%2Fgithub.com%2FHumanCellAtlas%2Fskylab%2FHCA_SmartSeq2/versions/dockstore/PLAIN_WDL/descriptor/..%2F..%2Ftest/smartseq2_single_sample/pr/dockstore_test_inputs.json -O Dockstore.json'
+            sh 'wget --header=\'Accept: text/plain\' https://staging.dockstore.org:443/api/api/ga4gh/v2/tools/%23workflow%2Fgithub.com%2FHumanCellAtlas%2Fskylab%2FHCA_SmartSeq2/versions/dockstore/PLAIN_WDL/descriptor/..%2F..%2Ftest/smartseq2_single_sample/pr/dockstore_test_inputs.json -O Dockstore.json'
             
           }
         )
