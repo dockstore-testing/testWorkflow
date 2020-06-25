@@ -1,4 +1,4 @@
-import "md5sum/md5sum-workflow.wdls" as md5sum
+import "https://github.com/garyluu/testWorkflow/edit/testBranchInvalidImport/metadata_example0.wdl" as md5sum
 
 task snowmanvcf2dRangerForBP {
 
