@@ -1,3 +1,5 @@
+import "md5sum/md5sum-workflow.wdls" as md5sum
+
 task snowmanvcf2dRangerForBP {
 
     #Inputs and constants defined here
