@@ -3,7 +3,7 @@ class: CommandLineTool
 baseCommand: javac
 hints:
   - class: DockerRequirement
-    dockerPull: java:7
+    dockerPull: openjdk:17
 baseCommand: javac
 arguments:
   - prefix: "-d"
